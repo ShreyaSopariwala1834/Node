@@ -1,0 +1,12 @@
+<%- include("partials/header") %>
+
+<h2>Edit Student Details</h2>
+
+<form action="/edit/<%= student._id %>" method="post">
+    Name: <input type="text" value="<%= student.name %>" name="name"><br><br>
+    Roll: <input type="number" value="<%=  student.roll %>" name="roll"><br><br>
+    Subject: <input type="text" value="<%= student.subject %>" name="subject"><br><br>
+    Marks: <input type="number" value="<%= student.marks %>" name="marks"><br><br>
+    <button type="submit">Update</button>
+</form>
+<%- include("partials/footer") %>

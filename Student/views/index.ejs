@@ -1,0 +1,28 @@
+<%- include("partials/header") %>
+
+<h1>Student Marksheet</h1>
+<a href="/add">Add Student</a>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>Name</th>
+        <th>Roll No</th>
+        <th>Subject</th>
+        <th>Marks</th>
+        <th>Actions</th>
+    </tr>
+    <% students.forEach(s => { %>
+        <tr>
+            <td><%= s.name %></td>
+            <td><%= s.roll %></td>
+            <td><%= s.subject %></td>
+            <td><%= s.marks %></td>
+            <td>
+                <a href="/edit/<%= s._id %>">Edit</a> |
+                <a href="/delete/<%= s._id %>">Delete</a>
+                <a href="/details/<%= s._id %>">Details</a>
+            </td>
+        </tr>
+  <%  }) %>
+</table>
+<%- include("partials/footer") %>
